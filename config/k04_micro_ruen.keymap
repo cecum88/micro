@@ -39,6 +39,7 @@
         speed-max = <12000>;
         acceleration-exponent = <3>;
     };
+};
 
 &pointer_accel {
     input-type = <INPUT_EV_REL>;
