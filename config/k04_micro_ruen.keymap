@@ -258,26 +258,6 @@
             label = "Gaming";
         };
 
-        gest_1 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-                                        &trans    &trans
-            >;
-        };
-
-        gest_2 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-                                        &trans    &trans
-            >;
-        };
-
         /* Layer 11. Host link tests: intervals in 1.25 ms units, latency in
            connection events, ball reports in ms. Reach it with &to 11 (bind it
            where you like, or through ZMK Studio); &to 0 on both outer thumbs
