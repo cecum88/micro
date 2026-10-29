@@ -39,70 +39,7 @@
         speed-max = <12000>;
         acceleration-exponent = <3>;
     };
-/*
-    gest_layer_1: gest_layer_1 {
-        compatible = "zmk,input-processor-mouse-gesture";
-        #input-processor-cells = <0>;
-        always-active;
-        enable-eager-mode;
-        suppress-movement;
-        stroke-size = <120>;
-        movement-threshold = <2>;
-        gesture-cooldown-ms = <250>;
 
-        gu {
-            pattern = <GESTURE_UP>;
-            bindings = <&gl_1_u>;
-        };
-
-        gd {
-            pattern = <GESTURE_DOWN>;
-            bindings = <&gl_1_d>;
-        };
-
-        gl {
-            pattern = <GESTURE_LEFT>;
-            bindings = <&gl_1_l>;
-        };
-
-        gr {
-            pattern = <GESTURE_RIGHT>;
-            bindings = <&gl_1_r>;
-        };
-    };
-
-    gest_layer_2: gest_layer_2 {
-        compatible = "zmk,input-processor-mouse-gesture";
-        #input-processor-cells = <0>;
-        always-active;
-        enable-eager-mode;
-        suppress-movement;
-        stroke-size = <120>;
-        movement-threshold = <2>;
-        gesture-cooldown-ms = <250>;
-
-        gu {
-            pattern = <GESTURE_UP>;
-            bindings = <&gl_2_u>;
-        };
-
-        gd {
-            pattern = <GESTURE_DOWN>;
-            bindings = <&gl_2_d>;
-        };
-
-        gl {
-            pattern = <GESTURE_LEFT>;
-            bindings = <&gl_2_l>;
-        };
-
-        gr {
-            pattern = <GESTURE_RIGHT>;
-            bindings = <&gl_2_r>;
-        };
-    };
-};
-*/
 &pointer_accel {
     input-type = <INPUT_EV_REL>;
     track-remainders;
