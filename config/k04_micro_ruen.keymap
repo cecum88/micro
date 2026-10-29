@@ -169,33 +169,7 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-
-        kha {
-            bindings = <&kp RU_CYRILLIC_HA>;
-            key-positions = <6 7>;
-            layers = <1>;
-        };
-
-        hrdsgn {
-            bindings = <&kp RU_CYRILLIC_HARD_SIGN>;
-            key-positions = <7 8>;
-            layers = <1>;
-        };
-
-        ru_io {
-            bindings = <&kp RU_CYRILLIC_IO>;
-            key-positions = <3 4>;
-            layers = <1>;
-        };
-
-        cmbenru {
-            bindings = <&tog 1>;
-            key-positions = <2 3>;
-            layers = <0 1>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     macros {
         to_ru: to_ru {
