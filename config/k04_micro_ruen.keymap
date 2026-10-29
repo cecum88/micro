@@ -39,7 +39,7 @@
         speed-max = <12000>;
         acceleration-exponent = <3>;
     };
-
+/*
     gest_layer_1: gest_layer_1 {
         compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
@@ -102,7 +102,7 @@
         };
     };
 };
-
+*/
 &pointer_accel {
     input-type = <INPUT_EV_REL>;
     track-remainders;
