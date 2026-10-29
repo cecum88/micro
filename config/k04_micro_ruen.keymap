@@ -267,22 +267,11 @@
 
 &trackball_listener {
     input-processors =
-        <&zip_auto_mouse 7 500>,
         <&pointer_accel>,
         <&xy_fine 2 5>;
 
-    gestures_layer_1 {
-        layers = <9>;
-        input-processors = <&gest_layer_1>;
-    };
-
-    gestures_layer_2 {
-        layers = <10>;
-        input-processors = <&gest_layer_2>;
-    };
-
     scroller {
-        layers = <8>;
+        layers = <6>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
             <&accel_scroll>,
@@ -290,5 +279,3 @@
             <&zip_xy_to_scroll_mapper>;
     };
 };
-
-&mkp_input_listener { input-processors = <&zip_auto_mouse 7 500>; };
