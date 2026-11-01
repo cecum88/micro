@@ -146,7 +146,7 @@
             #binding-cells = <0>;
             bindings = <&kp RU_CYRILLIC_SHA>, <&kp RU_CYRILLIC_SHCHA>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <225>;
         };
 
         td_soft_hard: td_soft_hard {
@@ -155,7 +155,7 @@
             #binding-cells = <0>;
             bindings = <&kp RU_CYRILLIC_SOFT_SIGN>, <&kp RU_CYRILLIC_HARD_SIGN>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <225>;
         };
 
         td_mouse_click: td_mouse_click {
@@ -172,6 +172,8 @@
             label = "TAB_EN";
             #binding-cells = <0>;
             bindings = <&kp Z>, <&kp TAB>;
+
+            tapping-term-ms = <300>;
         };
 
         tab_ru: tab_ru {
@@ -179,6 +181,8 @@
             label = "TAB_RU";
             #binding-cells = <0>;
             bindings = <&kp RU_CYRILLIC_YA>, <&kp TAB>;
+
+            tapping-term-ms = <300>;
         };
     };
 
