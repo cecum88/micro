@@ -185,6 +185,21 @@
             bindings = <&v4>;
             key-positions = <22 23>;
         };
+
+        combo_m1 {
+            bindings = <&mkp LCLK>;
+            key-positions = <13 12>;
+        };
+
+        combo_m2 {
+            bindings = <&mkp RCLK>;
+            key-positions = <12 11>;
+        };
+
+        combo_m3 {
+            bindings = <&mkp MCLK>;
+            key-positions = <11 13>;
+        };
     };
 
     macros {
