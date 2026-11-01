@@ -348,9 +348,9 @@
 
         mango {
             bindings = <
-&kp LG(LC(Q))  &kp LG(LC(W))  &kp LG(LC(E))  &kp LG(LC(R))    &kp LG(LC(T))                  &kp LG(LC(Y))  &kp LG(LC(U))     &kp LG(LC(I))  &kp LG(LC(O))  &kp LG(LC(P))
-&kp LG(LC(A))  &kp LG(LC(S))  &kp LG(LC(D))  &kp LG(LC(F))    &kp LG(LC(G))                  &kp LG(LC(H))  &kp LG(LC(LEFT))  &kp LG(LC(K))  &kp LG(LC(L))  &kp LG(LC(SEMI))
-&kp ESC        &none          &none          &td_mouse_click  &kp F17                        &kp F18        &none             &none          &none          &none
+&kp LG(LC(Q))  &kp LG(LC(W))  &kp LG(LC(E))  &kp LG(LC(R))    &kp LG(LC(T))                  &kp LG(LC(Y))  &kp LG(LC(U))  &kp LG(LC(I))  &kp LG(LC(O))  &kp LG(LC(P))
+&kp LG(LC(A))  &kp LG(LC(S))  &kp LG(LC(D))  &kp LG(LC(F))    &kp LG(LC(G))                  &kp LG(LC(H))  &kp LG(LC(J))  &kp LG(LC(K))  &kp LG(LC(L))  &kp LG(LC(SEMI))
+&kp ESC        &none          &none          &td_mouse_click  &kp F17                        &kp F18        &none          &none          &none          &none
                                              &none            &none          &none    &none  &none          &none
             >;
 
