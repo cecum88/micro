@@ -111,7 +111,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "ESC_EN";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             bindings = <&kp Q>, <&kp ESC>;
         };
 
@@ -119,7 +119,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "ESC_RU";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             bindings = <&kp RU_CYRILLIC_SHORT_I>, <&kp ESC>;
         };
 
@@ -136,7 +136,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TG_WS_WIN";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             bindings = <&kp LG(LC(RIGHT))>, <&kp LG(LC(LEFT_ARROW))>;
         };
 
@@ -144,7 +144,9 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_SHA_SHCHA";
             #binding-cells = <0>;
-            bindings = <&td_sha_shcha>, <&kp RU_CYRILLIC_SHCHA>;
+            bindings = <&kp RU_CYRILLIC_SHA>, <&kp RU_CYRILLIC_SHCHA>;
+
+            tapping-term-ms = <250>;
         };
 
         td_soft_hard: td_soft_hard {
@@ -152,6 +154,8 @@
             label = "TD_SOFT_HARD";
             #binding-cells = <0>;
             bindings = <&kp RU_CYRILLIC_SOFT_SIGN>, <&kp RU_CYRILLIC_HARD_SIGN>;
+
+            tapping-term-ms = <250>;
         };
 
         td_mouse_click: td_mouse_click {
@@ -159,6 +163,8 @@
             label = "TD_MOUSE_CLICK";
             #binding-cells = <0>;
             bindings = <&mkp LCLK>, <&mkp RCLK>;
+
+            tapping-term-ms = <250>;
         };
     };
 
