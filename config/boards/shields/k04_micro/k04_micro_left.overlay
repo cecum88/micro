@@ -26,19 +26,3 @@
         , <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
         ;
 };
-
-/* Правая = central + трекбол: события сенсора идут напрямую в хост,
-   без лишнего BLE-хопа через вторую половину. */
-&spi0 {
-    status = "okay";
-};
-
-&trackball {
-    status = "okay";
-};
-
-&trackball_listener {
-    status = "okay";
-    device = <&trackball>;
-};
-
