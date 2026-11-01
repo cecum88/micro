@@ -15,6 +15,7 @@
 #include <dt-bindings/zmk/ble_host_link.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     input_processors {
@@ -70,9 +71,9 @@
             tapping-term-ms = <125>;
         };
 
-        mt_125: mt_125 {
+        mt_tog_125: mt_tog_125 {
             compatible = "zmk,behavior-hold-tap";
-            label = "MT_125";
+            label = "MT_TOG_125";
             bindings = <&mo>, <&tog>;
 
             #binding-cells = <2>;
@@ -104,6 +105,46 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <250>;
+        };
+
+        esc_en: esc_en {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ESC_EN";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp Q>, <&kp ESC>;
+        };
+
+        esc_ru: esc_ru {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ESC_RU";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp RU_CYRILLIC_SHORT_I>, <&kp ESC>;
+        };
+
+        mt_kp_125: mt_kp_125 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_KP_125";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <125>;
+        };
+
+        tg_ws_win: tg_ws_win {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TG_WS_WIN";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LG(LC(RIGHT))>, <&kp LG(LC(LEFT_ARROW))>;
+        };
+
+        mkp: mkp {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MKP";
+            #binding-cells = <0>;
+            bindings = <&mkp MB1>, <&mkp MB2>;
         };
     };
 
@@ -184,35 +225,35 @@
 
         en {
             bindings = <
-&kp Q               &kp W                 &kp E               &kp R                   &kp T                                       &kp Y            &kp U                   &kp I               &kp O                  &kp P
+&esc_en             &kp W                 &kp E               &kp R                   &kp T                                       &kp Y            &kp U                   &kp I               &kp O                  &kp P
 &ht_200 LEFT_GUI A  &ht_200 LEFT_SHIFT S  &ht_200 LEFT_ALT D  &ht_200 LEFT_CONTROL F  &kp G                                       &kp H            &ht_200 LEFT_CONTROL J  &ht_200 LEFT_ALT K  &ht_200 RIGHT_SHIFT L  &ht_200 LEFT_GUI SEMICOLON
 &kp Z               &kp X                 &ht_150 LC(INS) C   &ht_250 LS(INS) V       &kp B                                       &kp N            &kp M                   &kp COMMA           &kp DOT                &kp SQT
-                                                              &mt_125 6 1             &td_lang_nix 5 0  &lt 2 SPACE    &lt 2 RET  &lt 3 BACKSPACE  &mt_125 6 1
+                                                              &mt_tog_125 6 1         &td_lang_nix 5 0  &lt 2 SPACE    &lt 2 RET  &lt 3 BACKSPACE  &mt_kp_125 6 TAB
             >;
 
-            display-name = "Base";
+            display-name = "EN";
         };
 
         ru {
             bindings = <
-&kp RU_CYRILLIC_SHORT_I          &kp RU_CYRILLIC_TSE                  &kp RU_CYRILLIC_U                  &kp RU_CYRILLIC_KA              &kp RU_CYRILLIC_IE                              &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE          &kp RU_CYRILLIC_SHA              &kp RU_CYRILLIC_SHCHA               &kp RU_CYRILLIC_ZE
+&esc_ru                          &kp RU_CYRILLIC_TSE                  &kp RU_CYRILLIC_U                  &kp RU_CYRILLIC_KA              &kp RU_CYRILLIC_IE                              &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE          &kp RU_CYRILLIC_SHA              &kp RU_CYRILLIC_SHCHA               &kp RU_CYRILLIC_ZE
 &ht_200 LEFT_GUI RU_CYRILLIC_EF  &ht_200 LEFT_SHIFT RU_CYRILLIC_YERU  &ht_200 LEFT_ALT RU_CYRILLIC_VE    &ht_200 LCTRL RU_CYRILLIC_A     &kp RU_CYRILLIC_PE                              &kp RU_CYRILLIC_ER  &ht_200 LCTRL RU_CYRILLIC_O  &ht_200 LEFT_ALT RU_CYRILLIC_EL  &ht_200 RIGHT_SHIFT RU_CYRILLIC_DE  &ht_200 LEFT_GUI RU_CYRILLIC_ZHE
 &kp RU_CYRILLIC_YA               &kp RU_CYRILLIC_CHE                  &ht_150 LC(INSERT) RU_CYRILLIC_ES  &ht_250 LS(INS) RU_CYRILLIC_EM  &kp RU_CYRILLIC_I                               &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN    &kp RU_CYRILLIC_BE               &kp RU_CYRILLIC_YU                  &kp RU_CYRILLIC_E
-                                                                                                         &mt_125 6 1                     &td_lang_nix 5 0    &lt 2 SPACE    &lt 2 ENTER  &lt 4 BACKSPACE     &mt_125 6 1
+                                                                                                         &mt_tog_125 6 1                 &td_lang_nix 5 0    &lt 2 SPACE    &lt 2 ENTER  &lt 4 BACKSPACE     &mt_kp_125 6 TAB
             >;
 
-            display-name = "Ru";
+            display-name = "RU";
         };
 
         nav {
             bindings = <
-&none  &kp N7  &kp N8  &kp N9  &kp N0                      &ht_200 LS(HOME) HOME  &kp PAGE_DOWN   &kp PAGE_UP   &ht_200 LS(END) END  &none
-&none  &kp N4  &kp N5  &kp N6  &none                       &kp LEFT_ARROW         &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW      &none
-&none  &kp N1  &kp N2  &kp N3  &kp DELETE                  &none                  &none           &none         &none                &none
-                       &none   &none       &none    &none  &none                  &none
+&kp C_PP    &kp N7  &kp N8  &kp N9  &kp N0                      &ht_200 LS(HOME) HOME  &kp PAGE_DOWN   &kp PAGE_UP   &ht_200 LS(END) END  &none
+&kp C_STOP  &kp N4  &kp N5  &kp N6  &none                       &kp LEFT_ARROW         &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW      &none
+&kp F20     &kp N1  &kp N2  &kp N3  &kp DELETE                  &none                  &none           &none         &none                &none
+                            &none   &none       &none    &none  &none                  &none
             >;
 
-            display-name = "Nav";
+            display-name = "MV";
         };
 
         sym_en {
@@ -223,11 +264,11 @@
                                                   &none                       &lg_tog_win  &none    &none  &none        &none
             >;
 
-            display-name = "Symbols";
+            display-name = "SS";
         };
 
         sym_ru {
-            display-name = "Symbols";
+            display-name = "SS";
             bindings = <
 &en DOLLAR  &en LT                   &kp EQUAL          &en GT                    &kp RU_CYRILLIC_IO                  &en CARET       &kp RU_DQT      &kp RU_COLON  &en SQT          &kp EXCL
 &en TILDE   &kp RU_LEFT_PARENTHESIS  &kp MINUS          &kp RU_RIGHT_PARENTHESIS  &kp RU_PLUS                         &en AT_SIGN     &en LEFT_BRACE  &kp RU_SEMI   &en RIGHT_BRACE  &kp RU_QMARK
@@ -238,24 +279,24 @@
 
         adj {
             bindings = <
-&none  &kp F7  &kp F8  &kp F9  &kp F10                  &none  &none  &none  &none  &none
-&none  &kp F4  &kp F5  &kp F6  &kp F11                  &none  &none  &none  &none  &none
-&none  &kp F1  &kp F2  &kp F3  &kp F12                  &none  &none  &none  &none  &studio_unlock
-                       &none   &none    &none    &none  &none  &none
+&none       &kp F7  &kp F8  &kp F9  &kp F10                  &none  &none  &none  &none  &none
+&none       &kp F4  &kp F5  &kp F6  &kp F11                  &none  &none  &none  &none  &none
+&tg_ws_win  &kp F1  &kp F2  &kp F3  &kp F12                  &none  &none  &none  &none  &studio_unlock
+                            &none   &none    &none    &none  &none  &none
             >;
 
-            display-name = "Adjust";
+            display-name = "FU";
         };
 
         mango {
             bindings = <
 &kp LG(LC(Q))  &kp LG(LC(W))  &kp LG(LC(E))  &kp LG(LC(R))  &kp LG(LC(T))                  &kp LG(LC(Y))  &kp LG(LC(U))     &kp LG(LC(I))  &kp LG(LC(O))  &kp LG(LC(P))
 &kp LG(LC(A))  &kp LG(LC(S))  &kp LG(LC(D))  &kp LG(LC(F))  &kp LG(LC(G))                  &kp LG(LC(H))  &kp LG(LC(LEFT))  &kp LG(LC(K))  &kp LG(LC(L))  &kp LG(LC(SEMI))
-&none          &none          &none          &none          &none                          &none          &none             &none          &none          &none
+&kp ESC        &none          &none          &mkp MB1       &kp F17                        &kp F18        &none             &none          &none          &none
                                              &none          &none          &none    &none  &none          &none
             >;
 
-            label = "Gaming";
+            label = "WM";
         };
 
         /* Layer 11. Host link tests: intervals in 1.25 ms units, latency in
@@ -266,9 +307,7 @@
 };
 
 &trackball_listener {
-    input-processors =
-        <&pointer_accel>,
-        <&xy_fine 2 5>;
+    input-processors = <&pointer_accel>, <&xy_fine 2 5>;
 
     scroller {
         layers = <6>;
